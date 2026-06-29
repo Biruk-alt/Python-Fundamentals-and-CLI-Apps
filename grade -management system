@@ -1,0 +1,32 @@
+def score_check(assesment_name, max_score):
+    while True:
+        score = float(input(f"Enter your {assesment_name}: "))
+        if 0 <= score <= max_score:
+            return score
+        else:
+            print(f"ERROR! {assesment_name} must be between 0 and {max_score}")
+
+def grade(score):
+    if score >= 90:
+        return "A"
+    elif score >= 80:
+        return "B"
+    elif score >= 70:
+        return "C"
+    elif score >= 60:
+        return "D"
+    elif score < 60:
+        return "F"
+
+test_score = score_check("Test score", 20)
+ass_score = score_check("Assignment score", 30)
+final_score = score_check("Final score", 50)
+
+result = test_score + ass_score + final_score
+x = grade(result)
+
+print("-------------------")
+print("ACADEMIC SUMMERY")
+print("------------------")
+print(f"Your final score is:  {result}/100")
+print(f"Your final grade is:  {x}")
